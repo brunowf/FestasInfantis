@@ -14,6 +14,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Tema implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -25,6 +27,7 @@ public class Tema implements Serializable {
 	private String cor_toalha;
 	private String valor_tema;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "tema")
 	private List<Festa>festas = new ArrayList<Festa>();
 	
